@@ -18,69 +18,83 @@ body {
 .top-bar {
     background: #00ff66;
     color: black;
-    padding: 10px;
+    padding: 12px;
     font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
 }
 
-/* アイコン */
-.title-icon {
-    width: 25px;
-    margin-right: 8px;
-}
-
-/* 戻る */
+/* 戻るボタン */
 .back-btn {
     position: absolute;
     left: 10px;
+    top: 10px;
     cursor: pointer;
 }
 
 /* スコア */
 .score {
-    position: absolute;
-    top: 50px;
-    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* メイン */
+.main {
+    margin-top: 20px;
+}
+
+/* 画像 */
+.main img {
+    width: 220px;
+    margin: 20px 0;
 }
 
 /* ボタン */
 button {
-    font-size: 25px;
+    font-size: 28px;
     margin: 10px;
-    padding: 15px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #00ff66;
+    color: black;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00cc55;
 }
 </style>
 </head>
 
 <body>
 
+<!-- 上バー -->
 <div class="top-bar">
-    <div class="back-btn" onclick="goBack()">←</div>
-    <img src="Icon.png" class="title-icon">
+    <div class="back-btn" onclick="goBack()">← 戻る</div>
     じゃいけん
 </div>
 
+<!-- スコア -->
 <div class="score">
     <div>シトム: <span id="enemyScore">0</span></div>
     <div>プレイヤー: <span id="playerScore">0</span></div>
 </div>
 
-<div style="margin-top:100px;">
+<!-- メイン -->
+<div class="main">
+
     <p id="jankenText">シトムとじゃんけんしてみよう</p>
 
-    <img src="SITM.png" width="200">
+    <img src="SITMPlus.png">
 
     <div>
         <button onclick="playJanken('グー')">✊</button>
         <button onclick="playJanken('チョキ')">✌️</button>
         <button onclick="playJanken('パー')">✋</button>
     </div>
+
 </div>
 
 <script src="janken.js"></script>
