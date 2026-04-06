@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>じゃいけん</title>
+
+<style>
+body {
+    margin: 0;
+    background: black;
+    color: #00ff66;
+    font-family: monospace;
+    text-align: center;
+}
+
+/* 上バー */
+.top-bar {
+    background: #00ff66;
+    color: black;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* アイコン */
+.title-icon {
+    width: 25px;
+    margin-right: 8px;
+}
+
+/* 戻る */
+.back-btn {
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+}
+
+/* スコア */
+.score {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* ボタン */
+button {
+    font-size: 25px;
+    margin: 10px;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <div class="back-btn" onclick="goBack()">←</div>
+    <img src="Icon.png" class="title-icon">
+    じゃいけん
+</div>
+
+<div class="score">
+    <div>シトム: <span id="enemyScore">0</span></div>
+    <div>プレイヤー: <span id="playerScore">0</span></div>
+</div>
+
+<div style="margin-top:100px;">
+    <p id="jankenText">シトムとじゃんけんしてみよう</p>
+
+    <img src="SITM.png" width="200">
+
+    <div>
+        <button onclick="playJanken('グー')">✊</button>
+        <button onclick="playJanken('チョキ')">✌️</button>
+        <button onclick="playJanken('パー')">✋</button>
+    </div>
+</div>
+
+<script src="janken.js"></script>
+
+<script>
+function goBack(){
+    window.history.back();
+}
+</script>
+
+</body>
+</html>
